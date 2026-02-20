@@ -370,3 +370,110 @@ body {
   background: var(--color-text-muted);
   transform: translateX(-50%);
 }
+
+/* -- CSV Upload -- */
+
+.csv-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.csv-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.csv-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.csv-stat-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.csv-expense {
+  color: var(--color-expenses);
+}
+
+.csv-income {
+  color: var(--color-income);
+}
+
+.csv-import-btn {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--color-net);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.csv-import-btn:hover {
+  opacity: 0.9;
+}
+
+.csv-import-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.csv-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.csv-success-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-income);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.csv-success-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.csv-success-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.csv-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  color: var(--color-expenses);
+  font-size: 0.875rem;
+}
+
+.csv-confirm-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}

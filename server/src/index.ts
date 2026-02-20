@@ -9,7 +9,12 @@ import {
   getNetWorthTimeline,
   getAnomalies,
   getDataInfo,
+  appendToUploadedJournal,
 } from "./hledger.js";
+import {
+  previewCsv,
+  transactionsToJournal,
+} from "./csv-processor.js";
 
 const server = new McpServer(
   {
@@ -432,13 +437,201 @@ const server = new McpServer(
         };
       }
     },
+  )
+  .registerWidget(
+    "csv-upload",
+    {
+      description:
+        "Interactive CSV import preview with transaction table, stats, and import confirmation",
+    },
+    {
+      description:
+        "Preview and import a CSV bank statement with a visual table. Use when the user provides CSV data or a bank statement to import. First call with confirm=false to show preview. After user confirms, call again with confirm=true to import.",
+      inputSchema: {
+        csvContent: z
+          .string()
+          .describe("The full CSV file content as a string"),
+        confirm: z
+          .boolean()
+          .optional()
+          .default(false)
+          .describe("Set to true to actually import the transactions. Default false = preview only."),
+      },
+      annotations: {
+        readOnlyHint: false,
+        openWorldHint: false,
+        destructiveHint: false,
+      },
+    },
+    async ({ csvContent, confirm }) => {
+      try {
+        const result = previewCsv(csvContent);
+
+        if (confirm) {
+          const journal = transactionsToJournal(result.transactions);
+          appendToUploadedJournal(journal);
+          return {
+            structuredContent: {
+              imported: true,
+              transactions: result.transactions,
+              count: result.count,
+              skippedDuplicates: result.skippedDuplicates,
+              dateRange: result.dateRange,
+              totalExpenses: result.totalExpenses,
+              totalIncome: result.totalIncome,
+            },
+            content: [
+              {
+                type: "text" as const,
+                text: `Successfully imported ${result.count} transactions.${result.skippedDuplicates > 0 ? ` (${result.skippedDuplicates} duplicates skipped)` : ""} All widgets now include this data.`,
+              },
+            ],
+            isError: false,
+          };
+        }
+
+        return {
+          structuredContent: {
+            imported: false,
+            transactions: result.transactions,
+            count: result.count,
+            skippedDuplicates: result.skippedDuplicates,
+            dateRange: result.dateRange,
+            totalExpenses: result.totalExpenses,
+            totalIncome: result.totalIncome,
+          },
+          content: [
+            {
+              type: "text" as const,
+              text: `CSV preview: ${result.count} new transactions found.${result.skippedDuplicates > 0 ? ` (${result.skippedDuplicates} duplicates skipped)` : ""} Ask the user to confirm before calling again with confirm=true.`,
+            },
+          ],
+          isError: false,
+        };
+      } catch (error) {
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `Error processing CSV: ${error instanceof Error ? error.message : String(error)}`,
+            },
+          ],
+          isError: true,
+        };
+      }
+    },
   );
+
+server.registerTool(
+  "preview-csv",
+  {
+    description:
+      "Parse and preview a CSV bank statement WITHOUT importing it. Returns a summary of detected transactions, date range, totals, and a sample of the first 5 rows. Use this FIRST when a user provides CSV data, then show them the preview and ask for confirmation before calling import-csv.",
+    inputSchema: {
+      csvContent: z
+        .string()
+        .describe("The full CSV file content as a string"),
+    },
+    annotations: {
+      readOnlyHint: true,
+      openWorldHint: false,
+      destructiveHint: false,
+    },
+  },
+  async ({ csvContent }) => {
+    try {
+      const result = previewCsv(csvContent);
+      const sampleLines = result.sample
+        .map((t) => `  ${t.date}  ${t.description}  ${t.amount > 0 ? "expense" : "income"} £${Math.abs(t.amount)}`)
+        .join("\n");
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: [
+              `CSV Preview: ${result.count} new transactions found.${result.skippedDuplicates > 0 ? ` (${result.skippedDuplicates} duplicates skipped)` : ""}`,
+              `Date range: ${result.dateRange.start} to ${result.dateRange.end}`,
+              `Total expenses: £${result.totalExpenses.toLocaleString()}`,
+              `Total income: £${result.totalIncome.toLocaleString()}`,
+              `Detected columns: date="${result.mapping.date}", description="${result.mapping.description}", ${result.mapping.amount ? `amount="${result.mapping.amount}"` : `debit="${result.mapping.debit}", credit="${result.mapping.credit}"`}`,
+              ``,
+              `Sample transactions:`,
+              sampleLines,
+              ``,
+              `Ask the user to confirm before importing.`,
+            ].join("\n"),
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: `Error previewing CSV: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  },
+);
+
+server.registerTool(
+  "import-csv",
+  {
+    description:
+      "Import a previously previewed CSV bank statement into the journal. Only call this AFTER preview-csv and after the user has confirmed they want to import. Converts transactions to hledger journal format and appends to the uploaded journal file.",
+    inputSchema: {
+      csvContent: z
+        .string()
+        .describe("The same CSV content that was previewed"),
+    },
+    annotations: {
+      readOnlyHint: false,
+      openWorldHint: false,
+      destructiveHint: false,
+    },
+  },
+  async ({ csvContent }) => {
+    try {
+      const result = previewCsv(csvContent);
+      const journal = transactionsToJournal(result.transactions);
+      appendToUploadedJournal(journal);
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: [
+              `Successfully imported ${result.count} transactions.${result.skippedDuplicates > 0 ? ` (${result.skippedDuplicates} duplicates skipped)` : ""}`,
+              `Date range: ${result.dateRange.start} to ${result.dateRange.end}`,
+              `Total expenses: £${result.totalExpenses.toLocaleString()}`,
+              `Total income: £${result.totalIncome.toLocaleString()}`,
+              ``,
+              `Transactions saved to uploaded journal. All existing widgets (spending breakdown, trends, etc.) will now include this data.`,
+            ].join("\n"),
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: `Error importing CSV: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  },
+);
 
 server.registerTool(
   "get-data-info",
   {
     description:
-      "Get available expense categories and date ranges for the financial data. Call this FIRST before other tools so you can suggest valid categories and periods to the user. Returns a list of expense categories (e.g. food, housing, transport) and suggested time periods.",
+      "Get available expense categories, date range, and suggested periods. Call this FIRST before using any financial widget to discover valid parameters.",
     inputSchema: {},
     annotations: {
       readOnlyHint: true,
@@ -449,15 +642,11 @@ server.registerTool(
   async () => {
     try {
       const info = getDataInfo();
-      const catList = info.categories.join(", ");
-      const periodList = info.suggestedPeriods
-        .map((p) => `${p.label} (${p.value})`)
-        .join(", ");
       return {
         content: [
           {
             type: "text" as const,
-            text: `Available data from ${info.dateRange.start} to ${info.dateRange.end}.\n\nExpense categories: ${catList}.\n\nSuggested periods: ${periodList}.`,
+            text: JSON.stringify(info, null, 2),
           },
         ],
       };

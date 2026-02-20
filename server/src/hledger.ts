@@ -1,13 +1,23 @@
 import { execSync } from "child_process";
+import { existsSync, appendFileSync, writeFileSync } from "fs";
 import { join } from "path";
 
-const JOURNAL_PATH = join(process.cwd(), "data", "sample.journal");
+const SAMPLE_JOURNAL = join(process.cwd(), "data", "sample.journal");
+const UPLOADED_JOURNAL = join(process.cwd(), "data", "uploaded.journal");
+
+function journalFlags(): string {
+  const flags = `-f "${SAMPLE_JOURNAL}"`;
+  if (existsSync(UPLOADED_JOURNAL)) {
+    return `${flags} -f "${UPLOADED_JOURNAL}"`;
+  }
+  return flags;
+}
 
 // --- Base functions ---
 
 export function hledger(args: string): string {
   try {
-    return execSync(`hledger -f "${JOURNAL_PATH}" ${args}`, {
+    return execSync(`hledger ${journalFlags()} ${args}`, {
       timeout: 5000,
       encoding: "utf-8",
     });
@@ -16,6 +26,13 @@ export function hledger(args: string): string {
       error instanceof Error ? error.message : String(error);
     throw new Error(`hledger command failed: ${message}`);
   }
+}
+
+export function appendToUploadedJournal(content: string): void {
+  if (!existsSync(UPLOADED_JOURNAL)) {
+    writeFileSync(UPLOADED_JOURNAL, "; Uploaded transactions\n\n", "utf-8");
+  }
+  appendFileSync(UPLOADED_JOURNAL, content, "utf-8");
 }
 
 export function hledgerJson(args: string): unknown {
