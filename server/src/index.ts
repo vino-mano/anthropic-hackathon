@@ -52,14 +52,14 @@ const server = new McpServer(
         const result = getSpendingBreakdown(period, depth, accountFilter);
         const topItems = result.categories
           .slice(0, 5)
-          .map((c) => `${c.name} $${c.amount.toLocaleString()} (${c.percentage}%)`)
+          .map((c) => `${c.name} £${c.amount.toLocaleString()} (${c.percentage}%)`)
           .join(", ");
         return {
           structuredContent: result,
           content: [
             {
               type: "text" as const,
-              text: `Spending breakdown for ${period}: Total $${result.total.toLocaleString()}. Top categories: ${topItems}.`,
+              text: `Spending breakdown for ${period}: Total £${result.total.toLocaleString()}. Top categories: ${topItems}.`,
             },
           ],
           isError: false,
@@ -122,7 +122,7 @@ const server = new McpServer(
           content: [
             {
               type: "text" as const,
-              text: `Financial trends (${interval}, ${period}): Average income $${Math.round(avgIncome).toLocaleString()}/period, average expenses $${Math.round(avgExpenses).toLocaleString()}/period. Most recent period net: $${latestNet.toLocaleString()}.`,
+              text: `Financial trends (${interval}, ${period}): Average income £${Math.round(avgIncome).toLocaleString()}/period, average expenses £${Math.round(avgExpenses).toLocaleString()}/period. Most recent period net: £${latestNet.toLocaleString()}.`,
             },
           ],
           isError: false,
@@ -168,14 +168,14 @@ const server = new McpServer(
         const result = getFinancialSummary(period);
         const topExpStr = result.topExpenses
           .slice(0, 3)
-          .map((e) => `${e.name} ($${e.amount.toLocaleString()})`)
+          .map((e) => `${e.name} (£${e.amount.toLocaleString()})`)
           .join(", ");
         return {
           structuredContent: result,
           content: [
             {
               type: "text" as const,
-              text: `Financial summary${period ? ` for ${period}` : ""}: Net worth $${result.netWorth.toLocaleString()}, income $${result.totalIncome.toLocaleString()}, expenses $${result.totalExpenses.toLocaleString()}, savings rate ${result.savingsRate}%, cashflow $${result.cashflow.toLocaleString()}. Top expenses: ${topExpStr}.`,
+              text: `Financial summary${period ? ` for ${period}` : ""}: Net worth £${result.netWorth.toLocaleString()}, income £${result.totalIncome.toLocaleString()}, expenses £${result.totalExpenses.toLocaleString()}, savings rate ${result.savingsRate}%, cashflow £${result.cashflow.toLocaleString()}. Top expenses: ${topExpStr}.`,
             },
           ],
           isError: false,

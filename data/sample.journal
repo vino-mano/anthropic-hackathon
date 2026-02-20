@@ -20,9 +20,9 @@ account equity:opening-balances
 ; === Opening Balances ===
 
 2025-09-01 Opening balances
-    assets:bank:checking       $8,500.00
-    assets:bank:savings        $15,000.00
-    liabilities:credit-card    $-450.00
+    assets:bank:checking       £8,500.00
+    assets:bank:savings        £15,000.00
+    liabilities:credit-card    £-450.00
     equity:opening-balances
 
 ; =============================
@@ -30,127 +30,127 @@ account equity:opening-balances
 ; =============================
 
 2025-09-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2025-09-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2025-09-03 Whole Foods groceries
-    expenses:food:groceries    $95.40
+    expenses:food:groceries    £95.40
     assets:bank:checking
 
 2025-09-04 Uber ride to downtown
-    expenses:transport         $32.50
+    expenses:transport         £32.50
     assets:bank:checking
 
 2025-09-05 Lunch at Chipotle
-    expenses:food:dining       $28.50
+    expenses:food:dining       £28.50
     liabilities:credit-card
 
 2025-09-07 Gas station fill-up
-    expenses:transport         $55.20
+    expenses:transport         £55.20
     assets:bank:checking
 
 2025-09-08 Trader Joe's groceries
-    expenses:food:groceries    $88.30
+    expenses:food:groceries    £88.30
     assets:bank:checking
 
 2025-09-10 Dinner with friends
-    expenses:food:dining       $62.00
+    expenses:food:dining       £62.00
     liabilities:credit-card
 
 2025-09-11 CVS pharmacy
-    expenses:health            $24.50
+    expenses:health            £24.50
     assets:bank:checking
 
 2025-09-12 Movie tickets
-    expenses:entertainment     $32.00
+    expenses:entertainment     £32.00
     assets:bank:checking
 
 2025-09-14 Kroger groceries
-    expenses:food:groceries    $110.25
+    expenses:food:groceries    £110.25
     assets:bank:checking
 
 2025-09-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2025-09-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2025-09-16 Credit card payment
-    liabilities:credit-card    $540.50
+    liabilities:credit-card    £540.50
     assets:bank:checking
 
 2025-09-18 Bus pass reload
-    expenses:transport         $45.00
+    expenses:transport         £45.00
     assets:bank:checking
 
 2025-09-19 Freelance web design project
-    assets:bank:checking       $750.00
+    assets:bank:checking       £750.00
     income:freelance
 
 2025-09-20 Thai restaurant dinner
-    expenses:food:dining       $45.00
+    expenses:food:dining       £45.00
     assets:bank:checking
 
 2025-09-22 Grocery Outlet
-    expenses:food:groceries    $78.60
+    expenses:food:groceries    £78.60
     assets:bank:checking
 
 2025-09-24 Coffee and pastries
-    expenses:food:dining       $18.50
+    expenses:food:dining       £18.50
     assets:bank:checking
 
 2025-09-25 Electric and water bill
-    expenses:utilities         $135.00
+    expenses:utilities         £135.00
     assets:bank:checking
 
 2025-09-27 Costco groceries
-    expenses:food:groceries    $125.80
+    expenses:food:groceries    £125.80
     assets:bank:checking
 
 2025-09-28 Uber to airport
-    expenses:transport         $48.00
+    expenses:transport         £48.00
     liabilities:credit-card
 
 2025-09-13 Walgreens toiletries
-    expenses:health            $15.80
+    expenses:health            £15.80
     assets:bank:checking
 
 2025-09-14 Farmers market produce
-    expenses:food:groceries    $42.50
+    expenses:food:groceries    £42.50
     assets:bank:checking
 
 2025-09-17 Taco truck lunch
-    expenses:food:dining       $14.00
+    expenses:food:dining       £14.00
     assets:bank:checking
 
 2025-09-21 Parking garage downtown
-    expenses:transport         $18.00
+    expenses:transport         £18.00
     assets:bank:checking
 
 2025-09-23 Safeway groceries
-    expenses:food:groceries    $92.10
+    expenses:food:groceries    £92.10
     assets:bank:checking
 
 2025-09-26 Bookstore and coffee
-    expenses:entertainment     $28.50
+    expenses:entertainment     £28.50
     assets:bank:checking
 
 2025-09-29 Streaming concert tickets
-    expenses:entertainment     $22.00
+    expenses:entertainment     £22.00
     assets:bank:checking
 
 2025-09-30 Lyft ride home
-    expenses:transport         $22.00
+    expenses:transport         £22.00
     assets:bank:checking
 
 2025-09-30 Late night snack run
-    expenses:food:groceries    $18.40
+    expenses:food:groceries    £18.40
     assets:bank:checking
 
 ; =============================
@@ -158,151 +158,151 @@ account equity:opening-balances
 ; =============================
 
 2025-10-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2025-10-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2025-10-02 Whole Foods groceries
-    expenses:food:groceries    $102.30
+    expenses:food:groceries    £102.30
     assets:bank:checking
 
 2025-10-03 Lunch at Panera
-    expenses:food:dining       $31.00
+    expenses:food:dining       £31.00
     assets:bank:checking
 
 2025-10-04 Gas station fill-up
-    expenses:transport         $52.80
+    expenses:transport         £52.80
     assets:bank:checking
 
 2025-10-06 Target groceries
-    expenses:food:groceries    $115.40
+    expenses:food:groceries    £115.40
     assets:bank:checking
 
 2025-10-07 Dinner at Italian place
-    expenses:food:dining       $68.00
+    expenses:food:dining       £68.00
     liabilities:credit-card
 
 2025-10-08 Fall jacket purchase
-    expenses:clothing          $145.00
+    expenses:clothing          £145.00
     liabilities:credit-card
 
 2025-10-10 Trader Joe's groceries
-    expenses:food:groceries    $92.50
+    expenses:food:groceries    £92.50
     assets:bank:checking
 
 2025-10-11 Uber ride
-    expenses:transport         $38.00
+    expenses:transport         £38.00
     assets:bank:checking
 
 2025-10-12 Doctor copay
-    expenses:health            $40.00
+    expenses:health            £40.00
     assets:bank:checking
 
 2025-10-13 Bowling night
-    expenses:entertainment     $28.00
+    expenses:entertainment     £28.00
     assets:bank:checking
 
 2025-10-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2025-10-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2025-10-16 Credit card payment
-    liabilities:credit-card    $700.00
+    liabilities:credit-card    £700.00
     assets:bank:checking
 
 2025-10-17 Winter coat purchase
-    expenses:clothing          $800.00
+    expenses:clothing          £800.00
     liabilities:credit-card
 
 2025-10-18 Pizza delivery
-    expenses:food:dining       $35.00
+    expenses:food:dining       £35.00
     assets:bank:checking
 
 2025-10-19 Kroger groceries
-    expenses:food:groceries    $108.70
+    expenses:food:groceries    £108.70
     assets:bank:checking
 
 2025-10-21 Bus fare
-    expenses:transport         $35.00
+    expenses:transport         £35.00
     assets:bank:checking
 
 2025-10-22 Pharmacy refill
-    expenses:health            $55.00
+    expenses:health            £55.00
     assets:bank:checking
 
 2025-10-24 Grocery Outlet
-    expenses:food:groceries    $85.90
+    expenses:food:groceries    £85.90
     assets:bank:checking
 
 2025-10-25 Electric and gas bill
-    expenses:utilities         $148.00
+    expenses:utilities         £148.00
     assets:bank:checking
 
 2025-10-26 Happy hour drinks
-    expenses:food:dining       $42.00
+    expenses:food:dining       £42.00
     liabilities:credit-card
 
 2025-10-28 Costco groceries
-    expenses:food:groceries    $130.20
+    expenses:food:groceries    £130.20
     assets:bank:checking
 
 2025-10-29 Halloween costume
-    expenses:clothing          $55.00
+    expenses:clothing          £55.00
     assets:bank:checking
 
 2025-10-30 Haunted house tickets
-    expenses:entertainment     $40.00
+    expenses:entertainment     £40.00
     assets:bank:checking
 
 2025-10-05 Brunch spot
-    expenses:food:dining       $38.00
+    expenses:food:dining       £38.00
     assets:bank:checking
 
 2025-10-09 Safeway groceries
-    expenses:food:groceries    $98.60
+    expenses:food:groceries    £98.60
     assets:bank:checking
 
 2025-10-14 Parking garage
-    expenses:transport         $15.00
+    expenses:transport         £15.00
     assets:bank:checking
 
 2025-10-15 Farmers market
-    expenses:food:groceries    $48.20
+    expenses:food:groceries    £48.20
     assets:bank:checking
 
 2025-10-20 Indian restaurant dinner
-    expenses:food:dining       $55.00
+    expenses:food:dining       £55.00
     assets:bank:checking
 
 2025-10-23 Lyft to doctor
-    expenses:transport         $28.00
+    expenses:transport         £28.00
     assets:bank:checking
 
 2025-10-25 Pumpkin patch visit
-    expenses:entertainment     $25.00
+    expenses:entertainment     £25.00
     assets:bank:checking
 
 2025-10-27 Walgreens cold medicine
-    expenses:health            $22.00
+    expenses:health            £22.00
     assets:bank:checking
 
 2025-10-28 Safeway groceries
-    expenses:food:groceries    $112.40
+    expenses:food:groceries    £112.40
     assets:bank:checking
 
 2025-10-30 Taco Tuesday dinner
-    expenses:food:dining       $28.00
+    expenses:food:dining       £28.00
     liabilities:credit-card
 
 2025-10-31 Credit card payment
-    liabilities:credit-card    $400.00
+    liabilities:credit-card    £400.00
     assets:bank:checking
 
 ; =============================
@@ -310,167 +310,167 @@ account equity:opening-balances
 ; =============================
 
 2025-11-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2025-11-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2025-11-02 Whole Foods groceries
-    expenses:food:groceries    $118.50
+    expenses:food:groceries    £118.50
     assets:bank:checking
 
 2025-11-03 Brunch at cafe
-    expenses:food:dining       $36.00
+    expenses:food:dining       £36.00
     assets:bank:checking
 
 2025-11-04 Gas station fill-up
-    expenses:transport         $58.40
+    expenses:transport         £58.40
     assets:bank:checking
 
 2025-11-05 Freelance consulting gig
-    assets:bank:checking       $1,200.00
+    assets:bank:checking       £1,200.00
     income:freelance
 
 2025-11-06 Sushi dinner
-    expenses:food:dining       $72.00
+    expenses:food:dining       £72.00
     liabilities:credit-card
 
 2025-11-08 Trader Joe's groceries
-    expenses:food:groceries    $105.20
+    expenses:food:groceries    £105.20
     assets:bank:checking
 
 2025-11-09 Concert tickets
-    expenses:entertainment     $55.00
+    expenses:entertainment     £55.00
     liabilities:credit-card
 
 2025-11-10 Uber ride
-    expenses:transport         $42.00
+    expenses:transport         £42.00
     assets:bank:checking
 
 2025-11-12 Kroger groceries
-    expenses:food:groceries    $128.40
+    expenses:food:groceries    £128.40
     assets:bank:checking
 
 2025-11-13 Lunch at deli
-    expenses:food:dining       $26.00
+    expenses:food:dining       £26.00
     assets:bank:checking
 
 2025-11-14 Flu medicine
-    expenses:health            $18.50
+    expenses:health            £18.50
     assets:bank:checking
 
 2025-11-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2025-11-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2025-11-16 Credit card payment
-    liabilities:credit-card    $600.00
+    liabilities:credit-card    £600.00
     assets:bank:checking
 
 2025-11-17 Winter boots
-    expenses:clothing          $120.00
+    expenses:clothing          £120.00
     assets:bank:checking
 
 2025-11-18 Grocery Outlet
-    expenses:food:groceries    $95.80
+    expenses:food:groceries    £95.80
     assets:bank:checking
 
 2025-11-19 Uber to event
-    expenses:transport         $35.00
+    expenses:transport         £35.00
     assets:bank:checking
 
 2025-11-20 Thai delivery
-    expenses:food:dining       $48.00
+    expenses:food:dining       £48.00
     liabilities:credit-card
 
 2025-11-21 Board game night snacks
-    expenses:entertainment     $22.00
+    expenses:entertainment     £22.00
     assets:bank:checking
 
 2025-11-22 Thanksgiving groceries
-    expenses:food:groceries    $165.00
+    expenses:food:groceries    £165.00
     assets:bank:checking
 
 2025-11-23 Black Friday deals electronics
-    expenses:entertainment     $58.00
+    expenses:entertainment     £58.00
     liabilities:credit-card
 
 2025-11-25 Electric and gas bill
-    expenses:utilities         $165.00
+    expenses:utilities         £165.00
     assets:bank:checking
 
 2025-11-26 Dinner out
-    expenses:food:dining       $55.00
+    expenses:food:dining       £55.00
     assets:bank:checking
 
 2025-11-27 Gas station fill-up
-    expenses:transport         $50.00
+    expenses:transport         £50.00
     assets:bank:checking
 
 2025-11-28 Costco groceries
-    expenses:food:groceries    $138.90
+    expenses:food:groceries    £138.90
     assets:bank:checking
 
 2025-11-05 Parking garage
-    expenses:transport         $12.00
+    expenses:transport         £12.00
     assets:bank:checking
 
 2025-11-07 Safeway groceries
-    expenses:food:groceries    $108.30
+    expenses:food:groceries    £108.30
     assets:bank:checking
 
 2025-11-09 Bagel shop breakfast
-    expenses:food:dining       $16.50
+    expenses:food:dining       £16.50
     assets:bank:checking
 
 2025-11-11 Lyft ride
-    expenses:transport         $24.00
+    expenses:transport         £24.00
     assets:bank:checking
 
 2025-11-15 Farmers market
-    expenses:food:groceries    $52.40
+    expenses:food:groceries    £52.40
     assets:bank:checking
 
 2025-11-16 Korean BBQ dinner
-    expenses:food:dining       $65.00
+    expenses:food:dining       £65.00
     liabilities:credit-card
 
 2025-11-18 Vitamins and supplements
-    expenses:health            $45.00
+    expenses:health            £45.00
     assets:bank:checking
 
 2025-11-21 Parking meter downtown
-    expenses:transport         $8.00
+    expenses:transport         £8.00
     assets:bank:checking
 
 2025-11-24 Safeway groceries
-    expenses:food:groceries    $122.50
+    expenses:food:groceries    £122.50
     assets:bank:checking
 
 2025-11-25 Wine bar evening
-    expenses:food:dining       $42.00
+    expenses:food:dining       £42.00
     assets:bank:checking
 
 2025-11-26 Escape room tickets
-    expenses:entertainment     $35.00
+    expenses:entertainment     £35.00
     assets:bank:checking
 
 2025-11-28 Scarf purchase
-    expenses:clothing          $45.00
+    expenses:clothing          £45.00
     assets:bank:checking
 
 2025-11-29 Credit card payment
-    liabilities:credit-card    $500.00
+    liabilities:credit-card    £500.00
     assets:bank:checking
 
 2025-11-30 Lyft ride
-    expenses:transport         $30.00
+    expenses:transport         £30.00
     assets:bank:checking
 
 ; =============================
@@ -478,191 +478,191 @@ account equity:opening-balances
 ; =============================
 
 2025-12-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2025-12-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2025-12-02 Whole Foods groceries
-    expenses:food:groceries    $135.60
+    expenses:food:groceries    £135.60
     assets:bank:checking
 
 2025-12-03 Coffee date
-    expenses:food:dining       $28.00
+    expenses:food:dining       £28.00
     assets:bank:checking
 
 2025-12-04 Gas station fill-up
-    expenses:transport         $62.00
+    expenses:transport         £62.00
     assets:bank:checking
 
 2025-12-05 Holiday party supplies
-    expenses:entertainment     $45.00
+    expenses:entertainment     £45.00
     assets:bank:checking
 
 2025-12-06 Trader Joe's groceries
-    expenses:food:groceries    $120.30
+    expenses:food:groceries    £120.30
     assets:bank:checking
 
 2025-12-07 Dinner at steakhouse
-    expenses:food:dining       $75.00
+    expenses:food:dining       £75.00
     liabilities:credit-card
 
 2025-12-08 Holiday gifts shopping
-    expenses:gifts             $1,200.00
+    expenses:gifts             £1,200.00
     liabilities:credit-card
 
 2025-12-09 Uber ride
-    expenses:transport         $40.00
+    expenses:transport         £40.00
     assets:bank:checking
 
 2025-12-10 Winter scarf and gloves
-    expenses:clothing          $85.00
+    expenses:clothing          £85.00
     liabilities:credit-card
 
 2025-12-11 Pharmacy visit
-    expenses:health            $32.00
+    expenses:health            £32.00
     assets:bank:checking
 
 2025-12-12 Christmas tree lot
-    expenses:entertainment     $60.00
+    expenses:entertainment     £60.00
     assets:bank:checking
 
 2025-12-13 Kroger groceries
-    expenses:food:groceries    $142.80
+    expenses:food:groceries    £142.80
     assets:bank:checking
 
 2025-12-14 Lunch at ramen shop
-    expenses:food:dining       $34.00
+    expenses:food:dining       £34.00
     assets:bank:checking
 
 2025-12-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2025-12-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2025-12-16 Credit card payment
-    liabilities:credit-card    $800.00
+    liabilities:credit-card    £800.00
     assets:bank:checking
 
 2025-12-17 Holiday cookies ingredients
-    expenses:food:groceries    $48.50
+    expenses:food:groceries    £48.50
     assets:bank:checking
 
 2025-12-18 New Year's Eve outfit
-    expenses:clothing          $180.00
+    expenses:clothing          £180.00
     liabilities:credit-card
 
 2025-12-19 Transit pass
-    expenses:transport         $45.00
+    expenses:transport         £45.00
     assets:bank:checking
 
 2025-12-20 Grocery Outlet
-    expenses:food:groceries    $98.70
+    expenses:food:groceries    £98.70
     assets:bank:checking
 
 2025-12-21 Dinner with family
-    expenses:food:dining       $68.00
+    expenses:food:dining       £68.00
     assets:bank:checking
 
 2025-12-22 Movie night
-    expenses:entertainment     $35.00
+    expenses:entertainment     £35.00
     assets:bank:checking
 
 2025-12-23 Last-minute gifts
-    expenses:gifts             $150.00
+    expenses:gifts             £150.00
     assets:bank:checking
 
 2025-12-24 Christmas Eve groceries
-    expenses:food:groceries    $155.40
+    expenses:food:groceries    £155.40
     assets:bank:checking
 
 2025-12-25 Electric and gas bill
-    expenses:utilities         $192.00
+    expenses:utilities         £192.00
     assets:bank:checking
 
 2025-12-27 Post-holiday brunch
-    expenses:food:dining       $42.00
+    expenses:food:dining       £42.00
     liabilities:credit-card
 
 2025-12-28 Gas station fill-up
-    expenses:transport         $55.00
+    expenses:transport         £55.00
     assets:bank:checking
 
 2025-12-29 Costco groceries
-    expenses:food:groceries    $148.20
+    expenses:food:groceries    £148.20
     assets:bank:checking
 
 2025-12-30 New Year's Eve party supplies
-    expenses:entertainment     $48.00
+    expenses:entertainment     £48.00
     assets:bank:checking
 
 2025-12-03 Safeway groceries
-    expenses:food:groceries    $128.40
+    expenses:food:groceries    £128.40
     assets:bank:checking
 
 2025-12-05 Parking garage
-    expenses:transport         $18.00
+    expenses:transport         £18.00
     assets:bank:checking
 
 2025-12-06 Bagel brunch
-    expenses:food:dining       $22.00
+    expenses:food:dining       £22.00
     assets:bank:checking
 
 2025-12-08 Lyft to mall
-    expenses:transport         $25.00
+    expenses:transport         £25.00
     assets:bank:checking
 
 2025-12-10 Farmers market
-    expenses:food:groceries    $58.30
+    expenses:food:groceries    £58.30
     assets:bank:checking
 
 2025-12-11 Lunch at taqueria
-    expenses:food:dining       $18.00
+    expenses:food:dining       £18.00
     assets:bank:checking
 
 2025-12-13 Karaoke night
-    expenses:entertainment     $30.00
+    expenses:entertainment     £30.00
     assets:bank:checking
 
 2025-12-16 Safeway groceries
-    expenses:food:groceries    $138.90
+    expenses:food:groceries    £138.90
     assets:bank:checking
 
 2025-12-19 Dinner at Thai place
-    expenses:food:dining       $52.00
+    expenses:food:dining       £52.00
     liabilities:credit-card
 
 2025-12-20 Eye exam copay
-    expenses:health            $50.00
+    expenses:health            £50.00
     assets:bank:checking
 
 2025-12-22 Parking at mall
-    expenses:transport         $12.00
+    expenses:transport         £12.00
     assets:bank:checking
 
 2025-12-26 Sweater purchase
-    expenses:clothing          $65.00
+    expenses:clothing          £65.00
     assets:bank:checking
 
 2025-12-27 Safeway groceries
-    expenses:food:groceries    $115.60
+    expenses:food:groceries    £115.60
     assets:bank:checking
 
 2025-12-28 Arcade outing
-    expenses:entertainment     $22.00
+    expenses:entertainment     £22.00
     assets:bank:checking
 
 2025-12-29 Dim sum lunch
-    expenses:food:dining       $38.00
+    expenses:food:dining       £38.00
     assets:bank:checking
 
 2025-12-31 Credit card payment
-    liabilities:credit-card    $900.00
+    liabilities:credit-card    £900.00
     assets:bank:checking
 
 ; =============================
@@ -670,171 +670,171 @@ account equity:opening-balances
 ; =============================
 
 2026-01-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2026-01-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2026-01-02 Whole Foods groceries
-    expenses:food:groceries    $148.30
+    expenses:food:groceries    £148.30
     assets:bank:checking
 
 2026-01-03 New Year brunch
-    expenses:food:dining       $52.00
+    expenses:food:dining       £52.00
     assets:bank:checking
 
 2026-01-04 Gas station fill-up
-    expenses:transport         $58.00
+    expenses:transport         £58.00
     assets:bank:checking
 
 2026-01-05 Gym equipment purchase
-    expenses:health            $400.00
+    expenses:health            £400.00
     liabilities:credit-card
 
 2026-01-06 Trader Joe's groceries
-    expenses:food:groceries    $132.50
+    expenses:food:groceries    £132.50
     assets:bank:checking
 
 2026-01-07 Thai takeout
-    expenses:food:dining       $38.00
+    expenses:food:dining       £38.00
     assets:bank:checking
 
 2026-01-08 Uber ride
-    expenses:transport         $36.00
+    expenses:transport         £36.00
     assets:bank:checking
 
 2026-01-09 Pharmacy refill
-    expenses:health            $65.00
+    expenses:health            £65.00
     assets:bank:checking
 
 2026-01-10 Streaming movie rental
-    expenses:entertainment     $18.00
+    expenses:entertainment     £18.00
     assets:bank:checking
 
 2026-01-11 Kroger groceries
-    expenses:food:groceries    $155.20
+    expenses:food:groceries    £155.20
     assets:bank:checking
 
 2026-01-12 Pizza night out
-    expenses:food:dining       $45.00
+    expenses:food:dining       £45.00
     liabilities:credit-card
 
 2026-01-13 Bus fare
-    expenses:transport         $30.00
+    expenses:transport         £30.00
     assets:bank:checking
 
 2026-01-14 Freelance logo design
-    assets:bank:checking       $500.00
+    assets:bank:checking       £500.00
     income:freelance
 
 2026-01-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2026-01-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2026-01-16 Credit card payment
-    liabilities:credit-card    $750.00
+    liabilities:credit-card    £750.00
     assets:bank:checking
 
 2026-01-17 Grocery Outlet
-    expenses:food:groceries    $118.60
+    expenses:food:groceries    £118.60
     assets:bank:checking
 
 2026-01-18 Dinner at Mexican restaurant
-    expenses:food:dining       $58.00
+    expenses:food:dining       £58.00
     assets:bank:checking
 
 2026-01-19 Doctor visit copay
-    expenses:health            $40.00
+    expenses:health            £40.00
     assets:bank:checking
 
 2026-01-20 Costco groceries
-    expenses:food:groceries    $162.40
+    expenses:food:groceries    £162.40
     assets:bank:checking
 
 2026-01-22 Winter clearance sale jacket
-    expenses:clothing          $95.00
+    expenses:clothing          £95.00
     liabilities:credit-card
 
 2026-01-23 Gas station fill-up
-    expenses:transport         $54.00
+    expenses:transport         £54.00
     assets:bank:checking
 
 2026-01-24 Board game cafe
-    expenses:entertainment     $25.00
+    expenses:entertainment     £25.00
     assets:bank:checking
 
 2026-01-25 Electric and gas bill
-    expenses:utilities         $198.00
+    expenses:utilities         £198.00
     assets:bank:checking
 
 2026-01-27 Lunch at sandwich shop
-    expenses:food:dining       $22.00
+    expenses:food:dining       £22.00
     assets:bank:checking
 
 2026-01-28 Whole Foods groceries
-    expenses:food:groceries    $140.80
+    expenses:food:groceries    £140.80
     assets:bank:checking
 
 2026-01-03 Safeway groceries
-    expenses:food:groceries    $138.20
+    expenses:food:groceries    £138.20
     assets:bank:checking
 
 2026-01-05 Parking garage
-    expenses:transport         $15.00
+    expenses:transport         £15.00
     assets:bank:checking
 
 2026-01-06 Bagel shop
-    expenses:food:dining       $15.00
+    expenses:food:dining       £15.00
     assets:bank:checking
 
 2026-01-09 Lyft ride
-    expenses:transport         $28.00
+    expenses:transport         £28.00
     assets:bank:checking
 
 2026-01-11 Farmers market
-    expenses:food:groceries    $55.80
+    expenses:food:groceries    £55.80
     assets:bank:checking
 
 2026-01-13 Dim sum lunch
-    expenses:food:dining       $42.00
+    expenses:food:dining       £42.00
     assets:bank:checking
 
 2026-01-16 Safeway groceries
-    expenses:food:groceries    $145.30
+    expenses:food:groceries    £145.30
     assets:bank:checking
 
 2026-01-19 Karaoke night
-    expenses:entertainment     $28.00
+    expenses:entertainment     £28.00
     assets:bank:checking
 
 2026-01-21 Parking meter
-    expenses:transport         $8.00
+    expenses:transport         £8.00
     assets:bank:checking
 
 2026-01-24 Safeway groceries
-    expenses:food:groceries    $152.10
+    expenses:food:groceries    £152.10
     assets:bank:checking
 
 2026-01-26 Sushi dinner
-    expenses:food:dining       $68.00
+    expenses:food:dining       £68.00
     liabilities:credit-card
 
 2026-01-28 Vitamins refill
-    expenses:health            $35.00
+    expenses:health            £35.00
     assets:bank:checking
 
 2026-01-29 Wine bar
-    expenses:food:dining       $38.00
+    expenses:food:dining       £38.00
     assets:bank:checking
 
 2026-01-30 Credit card payment
-    liabilities:credit-card    $500.00
+    liabilities:credit-card    £500.00
     assets:bank:checking
 
 ; =============================
@@ -842,177 +842,177 @@ account equity:opening-balances
 ; =============================
 
 2026-02-01 Salary deposit
-    assets:bank:checking       $5,000.00
+    assets:bank:checking       £5,000.00
     income:salary
 
 2026-02-01 Rent payment
-    expenses:housing:rent      $1,800.00
+    expenses:housing:rent      £1,800.00
     assets:bank:checking
 
 2026-02-02 Whole Foods groceries
-    expenses:food:groceries    $158.40
+    expenses:food:groceries    £158.40
     assets:bank:checking
 
 2026-02-03 Uber ride to appointment
-    expenses:transport         $42.00
+    expenses:transport         £42.00
     assets:bank:checking
 
 2026-02-04 Lunch at pho restaurant
-    expenses:food:dining       $32.00
+    expenses:food:dining       £32.00
     assets:bank:checking
 
 2026-02-05 Trader Joe's groceries
-    expenses:food:groceries    $145.80
+    expenses:food:groceries    £145.80
     assets:bank:checking
 
 2026-02-06 Valentine's dinner
-    expenses:food:dining       $72.00
+    expenses:food:dining       £72.00
     liabilities:credit-card
 
 2026-02-07 Valentine's flowers
-    expenses:gifts             $65.00
+    expenses:gifts             £65.00
     assets:bank:checking
 
 2026-02-08 Gas station fill-up
-    expenses:transport         $56.00
+    expenses:transport         £56.00
     assets:bank:checking
 
 2026-02-09 Pharmacy
-    expenses:health            $28.00
+    expenses:health            £28.00
     assets:bank:checking
 
 2026-02-10 Kroger groceries
-    expenses:food:groceries    $168.30
+    expenses:food:groceries    £168.30
     assets:bank:checking
 
 2026-02-11 Movie date
-    expenses:entertainment     $42.00
+    expenses:entertainment     £42.00
     assets:bank:checking
 
 2026-02-12 Coffee shop work session
-    expenses:food:dining       $18.00
+    expenses:food:dining       £18.00
     assets:bank:checking
 
 2026-02-13 Grocery Outlet
-    expenses:food:groceries    $112.50
+    expenses:food:groceries    £112.50
     assets:bank:checking
 
 2026-02-14 Valentine's Day prix fixe dinner
-    expenses:food:dining       $68.00
+    expenses:food:dining       £68.00
     liabilities:credit-card
 
 2026-02-15 Transfer to savings
-    assets:bank:savings        $500.00
+    assets:bank:savings        £500.00
     assets:bank:checking
 
 2026-02-15 Monthly subscriptions
-    expenses:subscriptions     $65.00
+    expenses:subscriptions     £65.00
     assets:bank:checking
 
 2026-02-16 Credit card payment
-    liabilities:credit-card    $650.00
+    liabilities:credit-card    £650.00
     assets:bank:checking
 
 2026-02-17 New running shoes
-    expenses:clothing          $130.00
+    expenses:clothing          £130.00
     assets:bank:checking
 
 2026-02-18 Uber ride
-    expenses:transport         $38.00
+    expenses:transport         £38.00
     assets:bank:checking
 
 2026-02-19 Costco groceries
-    expenses:food:groceries    $172.60
+    expenses:food:groceries    £172.60
     assets:bank:checking
 
 2026-02-20 Electric and gas bill
-    expenses:utilities         $185.00
+    expenses:utilities         £185.00
     assets:bank:checking
 
 2026-02-21 Dinner at burger joint
-    expenses:food:dining       $35.00
+    expenses:food:dining       £35.00
     assets:bank:checking
 
 2026-02-22 Bus fare
-    expenses:transport         $30.00
+    expenses:transport         £30.00
     assets:bank:checking
 
 2026-02-23 Escape room outing
-    expenses:entertainment     $35.00
+    expenses:entertainment     £35.00
     assets:bank:checking
 
 2026-02-24 Whole Foods groceries
-    expenses:food:groceries    $165.20
+    expenses:food:groceries    £165.20
     assets:bank:checking
 
 2026-02-25 Dentist copay
-    expenses:health            $75.00
+    expenses:health            £75.00
     assets:bank:checking
 
 2026-02-26 Lunch at deli
-    expenses:food:dining       $25.00
+    expenses:food:dining       £25.00
     assets:bank:checking
 
 2026-02-27 Gas station fill-up
-    expenses:transport         $52.00
+    expenses:transport         £52.00
     assets:bank:checking
 
 2026-02-03 Safeway groceries
-    expenses:food:groceries    $148.90
+    expenses:food:groceries    £148.90
     assets:bank:checking
 
 2026-02-05 Parking garage
-    expenses:transport         $15.00
+    expenses:transport         £15.00
     assets:bank:checking
 
 2026-02-06 Bagel shop
-    expenses:food:dining       $16.00
+    expenses:food:dining       £16.00
     assets:bank:checking
 
 2026-02-08 Lyft ride
-    expenses:transport         $32.00
+    expenses:transport         £32.00
     assets:bank:checking
 
 2026-02-10 Farmers market
-    expenses:food:groceries    $62.40
+    expenses:food:groceries    £62.40
     assets:bank:checking
 
 2026-02-12 Indian takeout
-    expenses:food:dining       $45.00
+    expenses:food:dining       £45.00
     liabilities:credit-card
 
 2026-02-14 Safeway groceries
-    expenses:food:groceries    $155.70
+    expenses:food:groceries    £155.70
     assets:bank:checking
 
 2026-02-16 Bowling night
-    expenses:entertainment     $28.00
+    expenses:entertainment     £28.00
     assets:bank:checking
 
 2026-02-18 Parking meter
-    expenses:transport         $8.00
+    expenses:transport         £8.00
     assets:bank:checking
 
 2026-02-20 Safeway groceries
-    expenses:food:groceries    $162.30
+    expenses:food:groceries    £162.30
     assets:bank:checking
 
 2026-02-22 Korean BBQ
-    expenses:food:dining       $58.00
+    expenses:food:dining       £58.00
     liabilities:credit-card
 
 2026-02-24 Cold medicine
-    expenses:health            $22.00
+    expenses:health            £22.00
     assets:bank:checking
 
 2026-02-26 Lyft to dinner
-    expenses:transport         $24.00
+    expenses:transport         £24.00
     assets:bank:checking
 
 2026-02-27 Safeway groceries
-    expenses:food:groceries    $142.80
+    expenses:food:groceries    £142.80
     assets:bank:checking
 
 2026-02-28 Credit card payment
-    liabilities:credit-card    $500.00
+    liabilities:credit-card    £500.00
     assets:bank:checking
