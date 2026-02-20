@@ -40,6 +40,15 @@ function FinancialTrends() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Financial Trends</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { periods } = output;
   const labels = periods.map((p) => p.date);
 

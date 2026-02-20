@@ -30,6 +30,15 @@ function BudgetComparison() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Budget vs Actual</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { categories, period } = output;
 
   // Aggregate totals across all periods per category

@@ -77,13 +77,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error getting spending breakdown: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting spending breakdown: ${msg}` }],
           isError: true,
         };
       }
@@ -140,13 +137,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error getting financial trends: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting financial trends: ${msg}` }],
           isError: true,
         };
       }
@@ -193,13 +187,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error getting financial summary: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting financial summary: ${msg}` }],
           isError: true,
         };
       }
@@ -256,13 +247,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error getting budget comparison: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting budget comparison: ${msg}` }],
           isError: true,
         };
       }
@@ -322,13 +310,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error searching transactions: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error searching transactions: ${msg}` }],
           isError: true,
         };
       }
@@ -374,13 +359,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error getting net worth timeline: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting net worth timeline: ${msg}` }],
           isError: true,
         };
       }
@@ -428,13 +410,10 @@ const server = new McpServer(
           isError: false,
         };
       } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
         return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error detecting anomalies: ${error instanceof Error ? error.message : String(error)}`,
-            },
-          ],
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error detecting anomalies: ${msg}` }],
           isError: true,
         };
       }

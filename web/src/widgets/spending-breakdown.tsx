@@ -35,6 +35,15 @@ function SpendingBreakdown() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Spending Breakdown</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { months, categoryTotals, grandTotal, period } = output;
 
   // Use category totals (sorted by amount) to determine which categories to show

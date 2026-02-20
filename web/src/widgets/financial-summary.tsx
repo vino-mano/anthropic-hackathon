@@ -43,6 +43,15 @@ function FinancialSummary() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Financial Overview</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const {
     netWorth,
     totalIncome,

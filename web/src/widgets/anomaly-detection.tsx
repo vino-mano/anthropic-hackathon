@@ -19,6 +19,15 @@ function AnomalyDetection() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Anomaly Detection</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { anomalies } = output;
 
   if (anomalies.length === 0) {

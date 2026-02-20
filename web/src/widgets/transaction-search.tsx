@@ -19,6 +19,15 @@ function TransactionSearch() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Transactions</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { transactions, count, query } = output;
 
   return (

@@ -32,6 +32,15 @@ function NetWorthTimeline() {
     );
   }
 
+  if ("_error" in output) {
+    return (
+      <div className="container">
+        <span className="section-title">Net Worth Over Time</span>
+        <div className="widget-error">{(output as any)._error}</div>
+      </div>
+    );
+  }
+
   const { points } = output;
   const latest = points[points.length - 1];
   const first = points[0];
