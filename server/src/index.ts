@@ -4,6 +4,7 @@ import {
   getSpendingBreakdown,
   getFinancialTrends,
   getFinancialSummary,
+  getDataInfo,
 } from "./hledger.js";
 
 const server = new McpServer(
@@ -34,7 +35,7 @@ const server = new McpServer(
           .describe(
             "Account depth for grouping (2 = top-level categories like food, housing)",
           ),
-        accountFilter: z
+        category: z
           .string()
           .optional()
           .describe(
@@ -47,9 +48,9 @@ const server = new McpServer(
         destructiveHint: false,
       },
     },
-    async ({ period, depth, accountFilter }) => {
+    async ({ period, depth, category }) => {
       try {
-        const result = getSpendingBreakdown(period, depth, accountFilter);
+        const result = getSpendingBreakdown(period, depth, category);
         const topItems = result.categories
           .slice(0, 5)
           .map((c) => `${c.name} £${c.amount.toLocaleString()} (${c.percentage}%)`)
@@ -193,6 +194,47 @@ const server = new McpServer(
       }
     },
   );
+
+server.registerTool(
+  "get-data-info",
+  {
+    description:
+      "Get available expense categories and date ranges for the financial data. Call this FIRST before other tools so you can suggest valid categories and periods to the user. Returns a list of expense categories (e.g. food, housing, transport) and suggested time periods.",
+    inputSchema: {},
+    annotations: {
+      readOnlyHint: true,
+      openWorldHint: false,
+      destructiveHint: false,
+    },
+  },
+  async () => {
+    try {
+      const info = getDataInfo();
+      const catList = info.categories.join(", ");
+      const periodList = info.suggestedPeriods
+        .map((p) => `${p.label} (${p.value})`)
+        .join(", ");
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: `Available data from ${info.dateRange.start} to ${info.dateRange.end}.\n\nExpense categories: ${catList}.\n\nSuggested periods: ${periodList}.`,
+          },
+        ],
+      };
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: `Error getting data info: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+  },
+);
 
 server.run();
 

@@ -81,11 +81,11 @@ export interface FinancialSummaryResult {
 export function getSpendingBreakdown(
   period: string,
   depth?: number,
-  accountFilter?: string,
+  category?: string,
 ): SpendingBreakdownResult {
   const depthArg = depth ? `--depth ${depth}` : "";
-  const account = accountFilter
-    ? `"expenses:${accountFilter}"`
+  const account = category
+    ? `"expenses:${category}"`
     : "expenses";
   const result = hledgerJson(
     `bal ${account} ${depthArg} -p "${period}" -S`,
@@ -259,4 +259,39 @@ export function getFinancialSummary(
     cashflow,
     topExpenses,
   };
+}
+
+// --- Discovery ---
+
+export interface DataInfo {
+  categories: string[];
+  dateRange: { start: string; end: string };
+  suggestedPeriods: { label: string; value: string }[];
+}
+
+export function getDataInfo(): DataInfo {
+  // Get expense categories (depth 2 for top-level groupings)
+  const accountsRaw = hledger("accounts expenses --depth 2").trim();
+  const categories = accountsRaw
+    .split("\n")
+    .map((a) => a.replace(/^expenses:/, ""))
+    .filter(Boolean);
+
+  // Get date range from stats
+  const statsRaw = hledger("stats");
+  const spanMatch = statsRaw.match(
+    /Txns span\s*:\s*(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})/,
+  );
+  const start = spanMatch ? spanMatch[1] : "unknown";
+  const end = spanMatch ? spanMatch[2] : "unknown";
+
+  const suggestedPeriods = [
+    { label: "All time", value: `${start}..${end}` },
+    { label: "Last 3 months", value: "2025-12..2026-03" },
+    { label: "Last month", value: "2026-02" },
+    { label: "Q4 2025 (Oct–Dec)", value: "2025q4" },
+    { label: "Q1 2026 (Jan–Mar)", value: "2026q1" },
+  ];
+
+  return { categories, dateRange: { start, end }, suggestedPeriods };
 }
