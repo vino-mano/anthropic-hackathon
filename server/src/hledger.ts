@@ -1,13 +1,30 @@
 import { execSync } from "child_process";
 import { join } from "path";
+import { existsSync } from "fs";
 
 const JOURNAL_PATH = join(process.cwd(), "data", "sample.journal");
+
+// Use bundled binary if system hledger is not available
+function getHledgerPath(): string {
+  try {
+    execSync("which hledger", { encoding: "utf-8" });
+    return "hledger";
+  } catch {
+    const bundled = join(process.cwd(), "bin", "hledger");
+    if (existsSync(bundled)) {
+      return bundled;
+    }
+    throw new Error("hledger not found: install it or ensure bin/hledger exists");
+  }
+}
+
+const HLEDGER_BIN = getHledgerPath();
 
 // --- Base functions ---
 
 export function hledger(args: string): string {
   try {
-    return execSync(`hledger -f "${JOURNAL_PATH}" ${args}`, {
+    return execSync(`${HLEDGER_BIN} -f "${JOURNAL_PATH}" ${args}`, {
       timeout: 5000,
       encoding: "utf-8",
     });
