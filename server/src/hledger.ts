@@ -725,6 +725,96 @@ export function getRecurringTransactions(
   return recurring;
 }
 
+// --- Net Worth Forecast ---
+
+export interface NetWorthForecastResult {
+  historical: { date: string; netWorth: number }[];
+  currentNetWorth: number;
+  avgMonthlyIncome: number;
+  avgMonthlyExpenses: number;
+  avgMonthlySavings: number;
+  forecasts: {
+    pessimistic: { date: string; netWorth: number }[];
+    realistic: { date: string; netWorth: number }[];
+    optimistic: { date: string; netWorth: number }[];
+  };
+}
+
+export function getNetWorthForecast(
+  period?: string,
+): NetWorthForecastResult {
+  // 1. Historical net worth points
+  const timeline = getNetWorthTimeline(period);
+  const historical = timeline.points.map((p) => ({
+    date: p.date,
+    netWorth: p.netWorth,
+  }));
+
+  const currentNetWorth =
+    historical.length > 0
+      ? historical[historical.length - 1].netWorth
+      : 0;
+
+  // 2. Income/expense averages from trends
+  const trendPeriod = period || "this year";
+  const trends = getFinancialTrends(trendPeriod, "monthly");
+
+  const periodCount = trends.periods.length || 1;
+  const avgMonthlyIncome =
+    Math.round(
+      (trends.periods.reduce((s, p) => s + p.income, 0) / periodCount) * 100,
+    ) / 100;
+  const avgMonthlyExpenses =
+    Math.round(
+      (trends.periods.reduce((s, p) => s + p.expenses, 0) / periodCount) * 100,
+    ) / 100;
+  const avgMonthlySavings =
+    Math.round((avgMonthlyIncome - avgMonthlyExpenses) * 100) / 100;
+
+  // 3. Project 9 months forward with 3 scenarios
+  const lastDate =
+    historical.length > 0
+      ? historical[historical.length - 1].date
+      : new Date().toISOString().slice(0, 7);
+
+  const scenarios = {
+    pessimistic: 0.4,
+    realistic: 1.0,
+    optimistic: 1.6,
+  };
+
+  const forecasts: NetWorthForecastResult["forecasts"] = {
+    pessimistic: [],
+    realistic: [],
+    optimistic: [],
+  };
+
+  for (const [scenario, multiplier] of Object.entries(scenarios) as [
+    keyof typeof scenarios,
+    number,
+  ][]) {
+    const monthlySaving = avgMonthlySavings * multiplier;
+    let runningNW = currentNetWorth;
+
+    for (let i = 1; i <= 9; i++) {
+      const [year, month] = lastDate.split("-").map(Number);
+      const d = new Date(year, month - 1 + i, 1);
+      const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+      runningNW = Math.round((runningNW + monthlySaving) * 100) / 100;
+      forecasts[scenario].push({ date: dateStr, netWorth: runningNW });
+    }
+  }
+
+  return {
+    historical,
+    currentNetWorth,
+    avgMonthlyIncome,
+    avgMonthlyExpenses,
+    avgMonthlySavings,
+    forecasts,
+  };
+}
+
 // --- Budget Comparison ---
 
 export interface BudgetPeriod {

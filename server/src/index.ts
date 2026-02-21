@@ -7,6 +7,7 @@ import {
   getBudgetComparison,
   getTransactionSearch,
   getNetWorthTimeline,
+  getNetWorthForecast,
   getAnomalies,
   getDataInfo,
   appendToUploadedJournal,
@@ -414,6 +415,56 @@ const server = new McpServer(
         return {
           structuredContent: { _error: msg },
           content: [{ type: "text" as const, text: `Error detecting anomalies: ${msg}` }],
+          isError: true,
+        };
+      }
+    },
+  )
+  .registerWidget(
+    "net-worth-forecast",
+    {
+      description:
+        "Line chart showing net worth forecast with pessimistic, realistic, and optimistic scenario projections",
+    },
+    {
+      description:
+        "Show net worth forecast with scenario projections. Use when the user asks about future finances, whether they'll make it to end of month, cash flow projections, or financial outlook. Examples: 'Am I going to make it?', 'What will my finances look like?', 'Will I run out of money?', 'Project my net worth'",
+      inputSchema: {
+        period: z
+          .string()
+          .optional()
+          .describe(
+            'Time period for historical data, e.g. "2025-09..2026-03", "this year". Omit for all available data.',
+          ),
+      },
+      annotations: {
+        readOnlyHint: true,
+        openWorldHint: false,
+        destructiveHint: false,
+      },
+    },
+    async ({ period }) => {
+      try {
+        const result = getNetWorthForecast(period);
+        const realistic9m = result.forecasts.realistic[result.forecasts.realistic.length - 1];
+        const projectedChange = realistic9m
+          ? realistic9m.netWorth - result.currentNetWorth
+          : 0;
+        return {
+          structuredContent: result,
+          content: [
+            {
+              type: "text" as const,
+              text: `Net worth forecast: Current £${result.currentNetWorth.toLocaleString()}. Avg monthly savings: £${result.avgMonthlySavings.toLocaleString()} (income £${result.avgMonthlyIncome.toLocaleString()} - expenses £${result.avgMonthlyExpenses.toLocaleString()}). Realistic 9-month projection: £${realistic9m?.netWorth.toLocaleString() ?? "N/A"} (${projectedChange >= 0 ? "+" : ""}£${projectedChange.toLocaleString()}).`,
+            },
+          ],
+          isError: false,
+        };
+      } catch (error) {
+        const msg = error instanceof Error ? error.message : String(error);
+        return {
+          structuredContent: { _error: msg },
+          content: [{ type: "text" as const, text: `Error getting net worth forecast: ${msg}` }],
           isError: true,
         };
       }
