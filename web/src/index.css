@@ -510,6 +510,7 @@ body {
   max-height: none;
   overflow: auto;
   padding: 1.5rem;
+  padding-bottom: 160px;
   gap: 1rem;
 }
 
